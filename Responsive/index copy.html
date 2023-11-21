@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Kitties Galore</title>
+<meta chaset = "UTF-8"/>
+<meta name="description" content="Cute Cats and Kittens.">
+<link href="style.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+<div class="pagebox">
+<header>
+<h1>Meowdy</h1>
+</header>
+
+<nav>
+<div class="topnav">
+<a class="current" href="index.html">Home</a>
+<a href="#">Content</a>
+<a href="#">About Us</a>
+</div>
+</nav>
+
+<article>
+<section>
+<h2>Mr. Whiskers</h2>
+<p>
+<img class="smallpic" src="img/cat1.jpg" alt="Picture of cat">
+<p>
+Mr. Whiskers is an adventurous gentleman that is sure to steal your heart.</p>
+<hr/>
+</section>
+
+<section>
+<h2>Ms. Kitty</h2>
+<img class="bigpic" src="img/cat2.jpg" alt="Picture of cat">
+<p>
+Ms. Kitty has a great personality along with sass and class. </p>
+<hr/>
+</section>
+    
+<section>
+<h2>The Cat's Meow</h2>
+<audio controls>
+<source src="mediatemplate/meow.mp3" type="audio/mpeg">
+Your browser does not support the audio element.
+</audio> 
+<p>
+Meow can be downloaded free at pixabay.com</p>
+<hr/>
+</section>
+
+<section id="slideshow">
+<h2>Cats of the Week</h2>
+<div class="slideshow-container">
+
+    <div class="mySlides fade">
+      <div class="numbertext">1 / 2</div>
+      <img src="img/cat3.jpg" style="width:100%">
+      <div class="text">Pickle</div>
+    </div>
+    
+    <div class="mySlides fade">
+      <div class="numbertext">2 / 2</div>
+      <img src="img/cat4.jpg" style="width:100%">
+      <div class="text">Mittens</div>
+    </div>
+    
+    <a class="prev" onclick="plusSlides(-1)">❮</a>
+    <a class="next" onclick="plusSlides(1)">❯</a>
+    </div>
+    <br>
+
+<div style="text-align:center">
+  <span class="dot" onclick="currentSlide(1)"></span> 
+  <span class="dot" onclick="currentSlide(2)"></span> 
+  
+</div>
+
+<hr/>
+</section>
+
+<section>
+<h2>Famous Cats</h2>
+<div class="video_container"> 
+<iframe src="https://www.youtube.com/embed/XyNlqQId-nk?si=3Jk0Piqs1b7H15cg"></iframe>
+</div>
+<hr/>
+</section>
+</article>
+
+<footer>
+<p>This page was created by Sophia &copy; 2023</p>
+</footer>
+
+<script>
+    let slideIndex = 1;
+    showSlides(slideIndex);
+    
+    function plusSlides(n) {
+      showSlides(slideIndex += n);
+    }
+    
+    function currentSlide(n) {
+      showSlides(slideIndex = n);
+    }
+    
+    function showSlides(n) {
+      let i;
+      let slides = document.getElementsByClassName("mySlides");
+      let dots = document.getElementsByClassName("dot");
+      if (n > slides.length) {slideIndex = 1}    
+      if (n < 1) {slideIndex = slides.length}
+      for (i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";  
+      }
+      for (i = 0; i < dots.length; i++) {
+        dots[i].className = dots[i].className.replace(" active", "");
+      }
+      slides[slideIndex-1].style.display = "block";  
+      dots[slideIndex-1].className += " active";
+    }
+    </script>
+    
+
+</div>
+</body>
+</html>
